@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import CalorieChart from "../CalorieChart";
-import UserChart from "../UserChart";
+import CalorieChart from "../CalorieChart/CalorieChart.js";
+import UserChart from "../UserChart/UserChart.js";
 
 const FoodTrack = (props) => (
   <tr>
