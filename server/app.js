@@ -6,18 +6,19 @@ require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 5000;
+const DataBase_conn = process.env.DATABASE_URL;
 
 app.use(cors());
 app.use(express.json());
 
-DATABASE_CONNECTION = "mongodb+srv://ahmedwael:123456a@cluster0.xb8bh8m.mongodb.net/";
-PORT = 6000;
+console.log("DataBaseURL" + " " + DataBase_conn)
+
 mongoose
-  .connect(DATABASE_CONNECTION, {
+  .connect(DataBase_conn, {
   })
   .then(() =>
-    app.listen(PORT, () =>
-      console.log(`Server is running at : http://localhost:${PORT}`)
+    app.listen(port, () =>
+      console.log(`Server is running at : http://localhost:${port}`)
     )
   )
   .catch((error) => console.error(error));
