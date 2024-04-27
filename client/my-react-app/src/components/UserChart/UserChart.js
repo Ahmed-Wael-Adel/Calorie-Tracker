@@ -14,6 +14,7 @@ const Delayed = ({ children, waitBeforeShow = 4500 }) => {
   return isShown ? children : null;
 };
 
+
 const UserChart = () => {
   const [chartData, setChartData] = useState({});
 
@@ -36,13 +37,13 @@ const UserChart = () => {
               label: "Calories",
               data: calories,
               backgroundColor: [
-                "#f42f42",
-                "#5ab950",
-                "#fe812a",
-                "#ffc748",
-                "#6b71c7",
-                "#8661d1",
-                "#8a2cba",
+              "#f42f42",
+              "#5ab950",
+              "#fe812a",
+              "#ffc748",
+              "#6b71c7",
+              "#8661d1",
+              "#8a2cba"
               ],
               borderColor: [
                 "#f42f42",
@@ -51,10 +52,11 @@ const UserChart = () => {
                 "#ffc748",
                 "#6b71c7",
                 "#8661d1",
-                "#8a2cba",
+                "#8a2cba"
               ],
               borderWidth: 2,
             },
+            
           ],
         });
       })
@@ -63,6 +65,7 @@ const UserChart = () => {
       });
     console.log(username, calories);
   }
+
 
   useEffect(() => {
     getData();
@@ -83,17 +86,19 @@ const UserChart = () => {
         </h5>
         <Delayed>
           <Pie
-            data={chartData}
-            options={{
-              title: {
-                text: "Calorie per User",
-                fontSize: 10,
-                fontColor: "#212529",
-              },
-              maintainAspectRatio: true,
-            }}
-          />
+          data={chartData}
+          options={{
+            title: {
+              text: "Calorie per User",
+              fontSize: 10,
+              fontColor: "#212529",
+            },
+          maintainAspectRatio: true,
+          }}
+        />
         </Delayed>
+       
+        
       </div>
     </div>
   );

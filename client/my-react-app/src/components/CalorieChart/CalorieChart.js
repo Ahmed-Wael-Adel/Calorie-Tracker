@@ -27,7 +27,7 @@ const CalorieChart = () => {
         for (let dataObj of res.data) {
           foodCal.push(dataObj.description);
           caloriesCal.push(parseInt(dataObj.caloriesCal));
-          console.log("foodCal, caloriesCal", foodCal, caloriesCal);
+          console.log("foodCal, caloriesCal",foodCal, caloriesCal);
         }
         setChartData({
           labels: foodCal,
@@ -42,7 +42,7 @@ const CalorieChart = () => {
                 "#ffc748",
                 "#6b71c7",
                 "#8661d1",
-                "#8a2cba",
+                "#8a2cba"
               ],
             },
           ],
@@ -51,7 +51,7 @@ const CalorieChart = () => {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   useEffect(() => {
     getData();
@@ -59,7 +59,8 @@ const CalorieChart = () => {
 
   return (
     <div className="App">
-      <h4>Food Analytics</h4>
+    
+      <h4>Food</h4>
 
       <h5
         style={{
@@ -72,39 +73,39 @@ const CalorieChart = () => {
         Calorie Intake per each Food
       </h5>
       <div>
-        <Delayed>
-          <Bar
-            data={chartData}
-            options={{
-              responsive: true,
-              title: {
-                text: "Calorie Per Food ",
-                fontSize: 20,
-                fontColor: "#212529",
-              },
-              scales: {
-                yAxes: [
-                  {
-                    ticks: {
-                      autoSkip: true,
-                      maxTicksLimit: 10,
-                      beginAtZero: true,
-                    },
-                    gridLines: {
-                      // display: true,
-                    },
+      <Delayed>
+        <Bar
+          data={chartData}
+          options={{
+            responsive: true,
+            title: {
+              text: "Calorie Per Food ",
+              fontSize: 20,
+              fontColor: "#212529",
+            },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    autoSkip: true,
+                    maxTicksLimit: 10,
+                    beginAtZero: true,
                   },
-                ],
-                xAxes: [
-                  {
-                    gridLines: {
-                      display: true,
-                    },
+                  gridLines: {
+                    // display: true,
                   },
-                ],
-              },
-            }}
-          />
+                },
+              ],
+              xAxes: [
+                {
+                  gridLines: {
+                    display: true,
+                  },
+                },
+              ],
+            },
+          }}
+        />
         </Delayed>
       </div>
     </div>

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React,{useState} from "react";
 import axios from "axios";
 
 const AddUser = () => {
-  const [username, setUsername] = useState("");
+    const [username,setUsername] = useState("");
 
+    
   function handleUsername(e) {
     setUsername(e.target.value);
   }
@@ -17,21 +18,17 @@ const AddUser = () => {
     axios
       .post("http://localhost:5000/users/add", user)
       .then((res) => console.log(res.data));
-    setUsername("");
+    setUsername("")
   }
 
-  return (
-    <>
-      <div class="container">
+    return (
+        <>
+        <div class="container">
         <div class="card border-0 shadow my-4">
           <div class="card-body p-3"></div>
           <div>
             <h3 style={{ textAlign: "center", marginBottom: "15px" }}>
-              <img
-                src="https://user-images.githubusercontent.com/37651620/142767072-ff777861-7ee9-4355-b48e-a624e8de085b.png"
-                alt="Logo"
-                style={{ height: "150px" }}
-              />
+              <img src="https://user-images.githubusercontent.com/37651620/142767072-ff777861-7ee9-4355-b48e-a624e8de085b.png" alt="Logo" style={{height:"150px"}} />
             </h3>
             <form onSubmit={handleSubmit}>
               <div
@@ -62,7 +59,7 @@ const AddUser = () => {
                   value="Create User"
                   className="btn "
                   style={{
-                    color: "white",
+                    color:"white",
                     marginBottom: "25px",
                     backgroundColor: "#8661d1",
                   }}
@@ -71,9 +68,9 @@ const AddUser = () => {
             </form>
           </div>
         </div>
-      </div>
-    </>
-  );
-};
+      </div> 
+        </>
+    )
+}
 
-export default AddUser;
+export default AddUser
